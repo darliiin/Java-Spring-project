@@ -1,0 +1,67 @@
+<!--<!DOCTYPE HTML>-->
+<!--<html xmlns:th="http://www.thymeleaf.org" lang="en">-->
+<!--<head>-->
+<!--    <title>Admin table</title>-->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1 style="color: coral">Hi, admin!</h1>-->
+<!--&lt;!&ndash;/*@thymesVar id="table" type="com.caterpillar.entity.Eco2"*/&ndash;&gt;-->
+<!--<span  th:each="eco2 : ${table}">-->
+<!--        <span th:text="${eco2}"></span>-->
+<!--        <a th:href="@{/admin/eco2/{id}/edit(id=${eco2.getId()})}">Edit</a>-->
+<!--        <a th:href="@{/admin/eco2/{id}/delete(id=${eco2.getId()})}">Delete</a>-->
+<!--        <p></p>-->
+<!--    </span>-->
+
+<!--<form th:method="GET" th:action="@{/admin/eco2/new}">-->
+<!--    <input type="submit" value="Add new">-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Admin table</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="text-white bg-dark">
+<div class="container">
+    <h1 class="my-5 text-center" style="color: coral">Hi, admin!</h1>
+    <!--/*@thymesVar id="table" type="com.caterpillar.entity.Eco2"*/-->
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col" style="background-color: coral;">Table Name</th>
+            <th scope="col" style="background-color: coral;">ID</th>
+            <th scope="col" style="background-color: coral;">Level</th>
+            <th scope="col" style="background-color: coral;">Edit</th>
+            <th scope="col" style="background-color: coral;">Delete</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="eco2 : ${table}">
+            <td>Eco2</td>
+            <td th:text="${eco2.getId()}"></td>
+            <td th:text="${eco2.getLevel()}"></td>
+            <td><a th:href="@{/admin/eco2/{id}/edit(id=${eco2.getId()})}">Edit</a></td>
+            <td><a th:href="@{/admin/eco2/{id}/delete(id=${eco2.getId()})}">Delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <form th:method="GET" th:action="@{/admin/eco2/new}">
+        <input type="submit" value="Add new" class="btn btn-primary" style="background-color: coral; color: white;">
+
+    </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

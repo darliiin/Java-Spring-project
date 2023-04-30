@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Admin table</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body class="text-white bg-dark">
+    <div class="container">
+        <h1 class="my-5 text-center" style="color: coral">Enter a new value</h1>
+
+        <form th:method="GET" th:action="@{/admin/eco2/new}">
+            <span  th:each="eco2 : ${table_eco2}">
+            <span th:text="${eco2}"></span>
+            <p></p>
+            </span>
+        </form>
+
+        <form th:method="POST" th:action="@{/admin/eco2/new}">
+            <label>level eco: <input type="text"  name="level"></label>
+            <input type="submit" value="Save" class="btn btn-light btn-sm"  style="background-color: coral; color: white;">
+        </form>
+        <a href="/admin" class="btn btn-secondary btn-sm">Отмена</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+:root {
+    --color1: #faf3dd;
+    --color2: #c8d5b9;
+
+}
+body {
+    padding: 200px 0;
+    background: url(line_wave_46.png), var(--color2);
+    background: url(line_wave_46.png), -moz-linear-gradient(left, var(--color1) 0%, var(--color2) 100%);
+    background: url(line_wave_46.png), -webkit-linear-gradient(left, var(--color1) 0%,var(--color2) 100%);
+    background: url(line_wave_46.png), linear-gradient(to right, var(--color1) 0%,var(--color2) 100%);
+    filter: url(line_wave_46.png),  progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--color1), endColorstr=var(--color2),GradientType=1 );
+}
+

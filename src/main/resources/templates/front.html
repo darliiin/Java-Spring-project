@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<!--<p th:text="'Hello, ' + ${name} + '!'" />-->
+<div class="container mt-5 mb-5">
+    <h1 style="color: aquamarine">Привествую тебя, дорогой пользователь!</h1>
+    <form action="/front" method="post">
+        <input type="email" name="email" placeholder="Введите электронную почту" class="form-control" size="23"><br>
+        <input type="password" name="pass" placeholder="Введите пароль" class="form-control"><br>
+        <button type="submit" class="btn btn-success" style="color: coral">Войти</button><br>
+
+    </form>
+    <form action="/register" method="get">
+        <button type="submit" class="btn btn-success" style="color: coral">register</button><br>
+    </form>
+
+</div>
+</body>
+</html>
